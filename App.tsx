@@ -7,6 +7,7 @@ import {
 } from "@expo-google-fonts/roboto";
 
 import { Loading } from "@components/Loading/Loading";
+import { Header } from "@components/Header/Header";
 
 import theme from "./src/theme/theme";
 
@@ -22,6 +23,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
+
       {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
