@@ -6,6 +6,7 @@ import { Container } from "./styles";
 import { Header } from "@components/Header/Header";
 import { Highlight } from "@components/Highlight/Highlight";
 import { GroupCard } from "@components/GroupCard/GroupCard";
+import { ListEmpty } from "@components/ListEmpty/ListEmpty";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>(["Galera da Rocketseat"]);
@@ -19,6 +20,10 @@ export function Groups() {
         data={groups}
         keyExtractor={(item) => item}
         renderItem={({ item }) => <GroupCard title={item} />}
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        ListEmptyComponent={() => (
+          <ListEmpty message="Que tal cadastrar a primeira turma?" />
+        )}
       />
     </Container>
   );
