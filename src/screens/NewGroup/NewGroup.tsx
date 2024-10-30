@@ -3,6 +3,7 @@ import { Container, Content, Icon } from "./styles";
 import { Header } from "@components/Header/Header";
 import { Highlight } from "@components/Highlight/Highlight";
 import { Button } from "@components/Button/Button";
+import { Input } from "@components/Input/Input";
 
 export function NewGroup() {
   return (
@@ -14,7 +15,8 @@ export function NewGroup() {
           title="Nova Turma"
           subtitle="crie uma turma para adicionar pessoas"
         />
-        <Button title="Criar" />
+        <Input />
+        <Button title="Criar" style={{ marginTop: 20 }} />
       </Content>
     </Container>
   );
