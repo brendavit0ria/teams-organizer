@@ -8,10 +8,13 @@ import { Highlight } from "@components/Highlight/Highlight";
 import { Input } from "@components/Input/Input";
 import { Filter } from "@components/Filter/Filter";
 import { PlayerCard } from "@components/ PlayerCard/ PlayerCard";
+import { ListEmpty } from "@components/ListEmpty/ListEmpty";
+import { Butterfly } from "phosphor-react-native";
+import { Button } from "@components/Button/Button";
 
 export function Players() {
   const [team, setTeam] = useState("Time A");
-  const [players, setPlayers] = useState(["brenda"]);
+  const [players, setPlayers] = useState([]);
 
   return (
     <Container>
@@ -45,7 +48,16 @@ export function Players() {
         renderItem={({ item }) => (
           <PlayerCard name={item} onRemove={() => {}} />
         )}
+        ListEmptyComponent={() => (
+          <ListEmpty message="Não há pessoas nesse time" />
+        )}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          { paddingBottom: 100 },
+          players.length === 0 && { flex: 1 },
+        ]}
       />
+      <Button title="Remover turma" type="SECONDARY" />
     </Container>
   );
 }
