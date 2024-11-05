@@ -7,10 +7,11 @@ import { ButtonIcon } from "@components/ButtonIcon/ButtonIcon";
 import { Highlight } from "@components/Highlight/Highlight";
 import { Input } from "@components/Input/Input";
 import { Filter } from "@components/Filter/Filter";
+import { PlayerCard } from "@components/ PlayerCard/ PlayerCard";
 
 export function Players() {
   const [team, setTeam] = useState("Time A");
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(["brenda"]);
 
   return (
     <Container>
@@ -38,6 +39,13 @@ export function Players() {
         />
         <NumbersOfPlayers>{players.length}</NumbersOfPlayers>
       </HeaderList>
+      <FlatList
+        data={players}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <PlayerCard name={item} onRemove={() => {}} />
+        )}
+      />
     </Container>
   );
 }
