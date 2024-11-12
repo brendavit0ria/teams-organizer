@@ -10,7 +10,7 @@ import { ListEmpty } from "@components/ListEmpty/ListEmpty";
 import { Button } from "@components/Button/Button";
 
 export function Groups() {
-  const [groups, setGroups] = useState<string[]>([""]);
+  const [groups, setGroups] = useState<string[]>([]);
 
   return (
     <Container>
