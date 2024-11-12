@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FlatList } from "react-native";
-import { Container, Form, HeaderList, NumbersOfPlayers } from "./styles";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
 import { Header } from "@components/Header/Header";
 import { ButtonIcon } from "@components/ButtonIcon/ButtonIcon";
@@ -9,7 +9,6 @@ import { Input } from "@components/Input/Input";
 import { Filter } from "@components/Filter/Filter";
 import { PlayerCard } from "@components/ PlayerCard/ PlayerCard";
 import { ListEmpty } from "@components/ListEmpty/ListEmpty";
-import { Butterfly } from "phosphor-react-native";
 import { Button } from "@components/Button/Button";
 
 export function Players() {
@@ -27,6 +26,7 @@ export function Players() {
         <Input placeholder="Nome da pessoa" autoCorrect={false} />
         <ButtonIcon icon="add" />
       </Form>
+
       <HeaderList>
         <FlatList
           data={["Time A", "Time B"]}
@@ -40,8 +40,9 @@ export function Players() {
           )}
           horizontal
         />
-        <NumbersOfPlayers>{players.length}</NumbersOfPlayers>
+        <NumberOfPlayers>{players.length}</NumberOfPlayers>
       </HeaderList>
+
       <FlatList
         data={players}
         keyExtractor={(item) => item}

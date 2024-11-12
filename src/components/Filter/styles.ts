@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 
-export type FIlterStyleProps = {
+export type FilterStyleProps = {
   isActive?: boolean;
 };
 
-export const Container = styled(TouchableOpacity)<FIlterStyleProps>`
+export const Container = styled(TouchableOpacity)<FilterStyleProps>`
   ${({ theme, isActive }) =>
     isActive &&
     css`
