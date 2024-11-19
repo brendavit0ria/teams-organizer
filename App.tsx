@@ -8,7 +8,8 @@ import {
 
 import theme from "./src/theme/theme";
 
-import { Players } from "@screens/Players/Players";
+import { Routes } from "./src/routes/routes";
+
 import { Loading } from "@components/Loading/Loading";
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
